@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {                 
             steps {
                 script {
-                    image = docker.build("sixeyed/pi:psod-pipelines", "--pull -f m4/Dockerfile m4")
+                    image = docker.build("ljupchokostic/jenkins:dockercore", "--pull -f m4/Dockerfile m4")
                 }                
             }
         }   
@@ -21,9 +21,10 @@ pipeline {
         stage('Push') {                 
             steps { 
                 script {
-                    withDockerRegistry([credentialsId: "docker-hub", url: "" ]) {        
-                        image.push()
-                    }     
+                    //withDockerRegistry([credentialsId: "docker-hub", url: "" ]) {        
+                    //    image.push()
+                    //} 
+                    image.push()
                 }
             }
         }
