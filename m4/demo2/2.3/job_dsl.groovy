@@ -11,7 +11,7 @@ for(p in pipelines) {
 	                git {
 	                  remote {
 	                    name('github')
-	                    url('https://github.com/sixeyed/jenkins-pipeline.git')
+	                    url('https://github.com/ljupcokostic/jenkins-pipeline.git')
 	                  }
 	                  branch('master')
 	                  extensions {
